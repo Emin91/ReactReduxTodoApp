@@ -1,21 +1,24 @@
 import React from 'react'
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native'
+import {StyleSheet, View, Text, ScrollView, TouchableOpacity} from 'react-native'
 
 const TodoList = ({ todos, toggleTodo }) => (
-    <View style={{padding: 20}}>
+    <ScrollView>
+    <View style={styles.container}>
        {todos.map(todo=>
         <TouchableOpacity key={todo.id} onPress={()=>toggleTodo(todo.id)}>
-            <Text style={{ fontSize: 24, textDecorationLine: todo.completed ? 'line-through' : 'none'}}>{todo.text}</Text>
+            <Text style={{ backgroundColor: '#252525', marginTop: 15, fontSize: 24, paddingTop: 5, paddingBottom: 5, paddingLeft: 15, color: '#fff', textDecorationLine: todo.completed ? 'line-through' : 'none'}}>{todo.text}</Text>
         </TouchableOpacity>
        )}
     </View>
+    </ScrollView>
 )
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        paddingTop: 20,
-        backgroundColor: '#141414',
+        marginTop: 20,
+        //backgroundColor: '#854a4a',
+        //paddingLeft: 15,
+        //paddingRight: 15,
     },
 });
 

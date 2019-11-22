@@ -15,14 +15,13 @@ class Todo extends Component {
             </View>
         )
     }
-        
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 20,
-        //backgroundColor: '#141414',
+        backgroundColor: '#141414',
     },
 });
 
